@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13-апта — Мәліметтермен жұмыс</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <p class="eyebrow">13-АПТА • WEB DEVELOPMENT</p>
+      <h1>Мәліметтермен жұмыс</h1>
+      <p class="subtitle">Іздеу, сүзу, сұрыптау және пагинация — сервер жағында орындалады.</p>
+    </header>
+
+    <section class="panel">
+      <div class="filters">
+        <label class="search-label">Іздеу
+          <input id="search" type="search" placeholder="Өнім атауын енгізіңіз...">
+        </label>
+        <label>Санат
+          <select id="category">
+            <option value="all">Барлық санат</option>
+            <option value="Электроника">Электроника</option>
+            <option value="Жиһаз">Жиһаз</option>
+            <option value="Аксессуар">Аксессуар</option>
+          </select>
+        </label>
+        <label>Бастапқы дата
+          <input id="from" type="date">
+        </label>
+        <label>Соңғы дата
+          <input id="to" type="date">
+        </label>
+        <label>Сұрыптау
+          <select id="sort">
+            <option value="date_desc">Жаңадан ескіге</option>
+            <option value="date_asc">Ескіден жаңасына</option>
+            <option value="name_asc">Атауы (A–Z)</option>
+            <option value="price_asc">Бағасы (өсуі)</option>
+            <option value="price_desc">Бағасы (кемуі)</option>
+          </select>
+        </label>
+        <button id="reset" class="secondary" type="button">Тазалау</button>
+      </div>
+    </section>
+
+    <section class="results-head">
+      <h2>Өнімдер тізімі</h2>
+      <span id="count" class="count">Жүктелуде...</span>
+    </section>
+    <section id="products" class="product-grid" aria-live="polite"></section>
+    <p id="empty" class="empty" hidden>Іздеу бойынша мәлімет табылмады.</p>
+
+    <nav class="pagination" aria-label="Беттер">
+      <button id="prev" class="secondary" type="button">← Алдыңғы</button>
+      <span id="pageInfo">1 / 1</span>
+      <button id="next" class="primary" type="button">Келесі →</button>
+    </nav>
+    <footer>13-апта тапсырмасы • Express.js сервері • API: /api/products</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
